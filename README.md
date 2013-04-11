@@ -5,7 +5,7 @@ closureCreator
 
 ### Как установить
 
-    git clone https://github.com/randomailer/closureCreator.git
+    git clone git://github.com/randomailer/closureCreator.git
     cd closureCreator
     sudo npm link
 
@@ -13,6 +13,11 @@ closureCreator
 ### Пример использования
 
     closureCreator -c nameSpace.MyClass -t
+
+
+    -c неймспейс класса
+    -t генерировать дополнительно ojster шаблон
+    -e неймспес класса, от котого будет наследоваться сгенерированный (по умолчанию goog.ui.Component)
 
     -> myclass.js
     -> tempates/myclass.js

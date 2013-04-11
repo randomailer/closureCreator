@@ -10,7 +10,7 @@ closureCreator
     sudo npm link
 
 
-### пример использования
+### Пример использования
 
     closureCreator -c nameSpace.MyClass -t
 

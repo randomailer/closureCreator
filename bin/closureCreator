@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+const VERSION = 'v0.0.1';
+
+var closureCreator = require('../lib/closureCreator');
+
+var args = process.argv.slice(2);
+var br = false;
+var params = {};
+
+args.forEach(function (arg, key) {
+	if (/^-.+/.test(arg)) {
+		params[arg] = '';
+	} else {
+		params[args[key-1]] = arg;
+	}
+});
+
+
+for (var key in params) {
+	switch (key) {
+		case '-c':
+		case '--className':
+			params['className'] = params[key];
+			break;
+		case '-d':
+		case '--destination':
+			params['destination'] = params[key];
+			break;
+		case '-t':
+		case '--withTemplate':
+			params['withTemplate'] = params[key];
+			break;
+		case '-h':
+		case '--help':
+			console.log('help');
+			br = true;
+			break;
+		case '-v':
+		case '--version':
+			console.log(VERSION);
+			br = true;
+			break;
+	}
+	
+	if (br) {
+		return;
+	}
+}
+
+closureCreator(params);

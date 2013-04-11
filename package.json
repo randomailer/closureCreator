@@ -1,0 +1,19 @@
+{
+  "name": "closureCreator",
+  "version": "0.0.1",
+  "description": "This is a generator closure style class with template",
+  "main": "./lib/closureCreator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randomailer/closureCreator.git"
+  },
+  "keywords": [
+    "closure",
+    "library"
+  ],
+  "author": "Valentine Titov",
+  "license": "BSD"
+}

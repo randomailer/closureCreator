@@ -2,7 +2,7 @@
 
 const VERSION = 'v0.0.1';
 
-var closureCreator = require('../lib/closureCreator');
+var closureCreator = require('../lib/closureCreator').closureCreator;
 
 var args = process.argv.slice(2);
 var br = false;
@@ -23,13 +23,17 @@ for (var key in params) {
 		case '--className':
 			params['className'] = params[key];
 			break;
+	    case '-e':
+	    case '--extends':
+	        params['extends'] = params[key];
+	        break;
 		case '-d':
 		case '--destination':
 			params['destination'] = params[key];
 			break;
 		case '-t':
 		case '--withTemplate':
-			params['withTemplate'] = params[key];
+			params['withTemplate'] = true;
 			break;
 		case '-h':
 		case '--help':
@@ -48,4 +52,5 @@ for (var key in params) {
 	}
 }
 
-closureCreator(params);
+
+closureCreator.create(params);

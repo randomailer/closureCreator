@@ -58,3 +58,17 @@ namespace.MyClass.prototype.disposeInternal = function () {
     goog.base(this, 'disposeInternal');
 };
 ```
+
+### Ну и набросок для темплейта
+
+```
+<% @require ojster %>
+
+<% @template namespace.myClass.templates.MyClass %>
+<% @inherits ojster.Template %>
+
+
+<% @block main { %>
+
+<% @block main } %>
+```

@@ -21,6 +21,7 @@ closureCreator
 
 ### На выходе получится следующее
 
+```
 goog.provide('namespace.MyClass');
 
 goog.require('namespace.myClass.templates.MyClass);
@@ -56,3 +57,4 @@ namespace.MyClass.prototype.enterDocument = function () {
 namespace.MyClass.prototype.disposeInternal = function () {
     goog.base(this, 'disposeInternal');
 };
+```

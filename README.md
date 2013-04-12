@@ -16,8 +16,43 @@ closureCreator
 
 
     -c неймспейс класса
-    -t генерировать дополнительно ojster шаблон
-    -e неймспес класса, от котого будет наследоваться сгенерированный (по умолчанию goog.ui.Component)
+    -t генерировать дополнительно ojster шаблон (не обязательный)
+    -e неймспес класса, от котого будет наследоваться сгенерированный (не обязательный, по умолчанию goog.ui.Component)
 
-    -> myclass.js
-    -> tempates/myclass.js
+### На выходе получится следующее
+
+goog.provide('namespace.MyClass');
+
+goog.require('namespace.myClass.templates.MyClass);
+goog.require('goog.ui.Component');
+goog.require('ojster');
+
+/**
+ *
+ * @extends {goog.ui.Component}
+ * @constructor
+ */
+namespace.MyClass = function () {
+    goog.base(this);
+};
+goog.inherits(namespace.MyClass, goog.ui.Component);
+
+namespace.MyClass.prototype.createDom = function () {
+    /** @type {ojster.Template}
+    var template = new namespace.myClass.templates.MyClass();
+    /** @type {Element} */
+    var element = ojster.createTemplate(template);
+    this.setElementInternal(element);
+};
+
+namespace.MyClass.prototype.enterDocument = function () {
+    goog.base(this, 'enterDocument');
+};
+
+/**
+ *
+ * @inheritDoc
+ */
+namespace.MyClass.prototype.disposeInternal = function () {
+    goog.base(this, 'disposeInternal');
+};

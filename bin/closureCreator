@@ -35,6 +35,10 @@ for (var key in params) {
 		case '--withTemplate':
 			params['withTemplate'] = true;
 			break;
+	    case '-ot':
+	    case '--onlyTemplate':
+            params['withTemplate'] = true;
+            params['onlyTemplate'] = true;
 		case '-h':
 		case '--help':
 			console.log('help');
